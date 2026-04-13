@@ -23,6 +23,7 @@ body {
   background: var(--bg);
   color: var(--text);
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 /* ================= NAVBAR ================= */
@@ -31,7 +32,6 @@ body {
   top: 0;
   width: 100%;
   background: rgba(11, 15, 26, 0.6);
-  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
@@ -60,10 +60,11 @@ body {
 
 }
 @media (max-width: 768px) {
+
   .nav {
     display: flex;
     align-items: start;
-    position: absolute;
+    position: fixed;
     top: 100%;
   }
   .contact-nav {
