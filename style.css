@@ -828,17 +828,6 @@ h3 {
   }
 }
 
-/* ================= ANIMATIONS ================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
@@ -968,16 +957,16 @@ fill: var(--primary);
     gap: 12px;
   }
 }
-
-.reveal-img {
+/* ================= ANIMATIONS BOUNCE ================= */
+.reveal-bounce {
   opacity: 0;
   transform: translateY(-150px) scale(0.9);
   filter: blur(8px);
   will-change: transform, opacity, filter;
 }
 
-.reveal-img.active {
-  animation: dropBounce 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.reveal-bounce.active {
+  animation: dropBounce .7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); 
 }
 
@@ -1004,6 +993,17 @@ fill: var(--primary);
     filter: blur(0);
     opacity: 1;
   }
+}
+/* ================= ANIMATIONS ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 

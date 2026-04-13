@@ -136,7 +136,7 @@ form.addEventListener("submit", async function(e) {
 /*============ animation================*/
 function revealOnScroll() {
   const elements = document.querySelectorAll(
-    ".reveal-img, .reveal-about, .reveal-left, .reveal-right"
+    ".reveal-bounce, .reveal-about, .reveal-left, .reveal-right"
   );
 
   elements.forEach((el) => {
