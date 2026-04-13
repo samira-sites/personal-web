@@ -131,3 +131,42 @@ form.addEventListener("submit", async function(e) {
     }, 3000);
   }
 });
+
+/*============bounch-animation================*/
+
+function revealImage() {
+  const elements = document.querySelectorAll(".reveal-img");
+
+  elements.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+// run on scroll
+window.addEventListener("scroll", revealImage);
+
+// run on page load
+window.addEventListener("load", revealImage);
+
+/*============slide from left animation================*/
+
+function revealAbout() {
+  const elements = document.querySelectorAll(".reveal-about");
+
+  elements.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealAbout);
+window.addEventListener("load", revealAbout);
