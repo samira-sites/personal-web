@@ -154,9 +154,10 @@ window.addEventListener("scroll", revealImage);
 window.addEventListener("load", revealImage);
 
 /*============slide from left animation================*/
-
-function revealAbout() {
-  const elements = document.querySelectorAll(".reveal-about");
+function revealOnScroll() {
+  const elements = document.querySelectorAll(
+    ".reveal-about, .reveal-left, .reveal-right"
+  );
 
   elements.forEach((el) => {
     const windowHeight = window.innerHeight;
@@ -168,5 +169,5 @@ function revealAbout() {
   });
 }
 
-window.addEventListener("scroll", revealAbout);
-window.addEventListener("load", revealAbout);
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
