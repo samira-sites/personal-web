@@ -3,9 +3,17 @@ const mobileNav = document.getElementById("mobileNav");
 const overlay = document.getElementById("overlay");
 
 burger.addEventListener("click", () => {
+  const isOpen = mobileNav.classList.contains("active");
+
   burger.classList.toggle("active");
   mobileNav.classList.toggle("active");
   overlay.classList.toggle("active");
+
+  if (!isOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
 });
 
 // Close when clicking overlay
@@ -13,6 +21,7 @@ overlay.addEventListener("click", () => {
   burger.classList.remove("active");
   mobileNav.classList.remove("active");
   overlay.classList.remove("active");
+  document.body.style.overflow = "";
 });
 
 // Close when clicking links
@@ -21,26 +30,7 @@ document.querySelectorAll(".mobile-nav a").forEach(link => {
     burger.classList.remove("active");
     mobileNav.classList.remove("active");
     overlay.classList.remove("active");
-  });
-});
-
-// =========================
-// MODAL
-// =========================
-function openModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) modal.style.display = "flex";
-}
-
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) modal.style.display = "none";
-}
-
-// CLOSE MODAL WHEN CLICKING OUTSIDE
-window.addEventListener("click", (e) => {
-  document.querySelectorAll(".modal").forEach(modal => {
-    if (e.target === modal) modal.style.display = "none";
+    document.body.style.overflow = "";
   });
 });
 
