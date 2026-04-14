@@ -19,7 +19,7 @@
   font-family: Arial, sans-serif;
 }
 html {
-  scroll-padding-top: 20px; 
+  scroll-padding-top: 30px;
 }
 
 body {
@@ -27,7 +27,7 @@ body {
   color: var(--text);
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
-  padding-top: 0px;
+  padding-top: 70px;
 }
 
 /* ================= NAVBAR ================= */
@@ -181,17 +181,33 @@ body {
 /* ================= HERO ================= */
 .hero {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 120px 10%;
-  min-height: 100vh;
+  justify-content: center;
+
+  min-height: calc(100vh - 70px); /* fixes header space issue */
+  padding: 0 10%;
   gap: 40px;
 }
+/* Mobile layout */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 
-@media (min-width: 678px) {
+    min-height: calc(100vh - 70px);
+    padding: 20px;
+    gap: 30px;
+  }
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
   .hero-box {
     display: grid;
     grid-template-columns: 1.5fr 2fr;
+    align-items: center; /* perfect vertical alignment */
+    width: 100%;
   }
 }
 h1 {
@@ -203,6 +219,7 @@ h1 span {
   font-size: clamp(2rem, 5vw, 4rem);
   color: var(--primary);
 }
+
 
 .subtitle {
   color: var(--muted);
@@ -221,6 +238,7 @@ h1 span {
   padding: clamp(4px, 1vw, 6px) clamp(12px, 2vw, 16px);
   font-size: clamp(12px, 1.5vw, 14px);
 }
+/* Prevent image misalignment */
 .hero-img {
   display: flex;
   align-items: center;
