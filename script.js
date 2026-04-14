@@ -1,39 +1,28 @@
-// =========================
-// SELECT ELEMENTS FIRST (IMPORTANT)
-// =========================
 const burger = document.getElementById("burger");
-const nav = document.getElementById("navMenu");
-const overlay = document.querySelector(".overlay");
+const mobileNav = document.getElementById("mobileNav");
+const overlay = document.getElementById("overlay");
 
-const form = document.getElementById("contactForm");
-const msg = document.getElementById("responseMsg");
-
-
-// =========================
-// BURGER MENU
-// =========================
 burger.addEventListener("click", () => {
   burger.classList.toggle("active");
-  nav.classList.toggle("active");
+  mobileNav.classList.toggle("active");
   overlay.classList.toggle("active");
 });
 
-// CLOSE ON OVERLAY CLICK
+// Close when clicking overlay
 overlay.addEventListener("click", () => {
   burger.classList.remove("active");
-  nav.classList.remove("active");
+  mobileNav.classList.remove("active");
   overlay.classList.remove("active");
 });
 
-// CLOSE WHEN CLICKING NAV LINK
-document.querySelectorAll(".nav a").forEach(link => {
+// Close when clicking links
+document.querySelectorAll(".mobile-nav a").forEach(link => {
   link.addEventListener("click", () => {
     burger.classList.remove("active");
-    nav.classList.remove("active");
+    mobileNav.classList.remove("active");
     overlay.classList.remove("active");
   });
 });
-
 
 // =========================
 // MODAL

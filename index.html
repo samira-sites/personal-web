@@ -11,25 +11,34 @@
 
 <body>
   <header class="header">
-  
     <a href="#" class="logo">SAM</a>
-
-      <nav class="nav" id="navMenu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact" class="contact-nav">Contact</a>
-      </nav>
-
-      <!-- Burger Button -->
-      <div id="burger" class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
   
+    <!-- Desktop Nav -->
+    <nav class="nav desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="contact-nav">Contact</a>
+    </nav>
+  
+    <!-- Burger -->
+    <div id="burger" class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
-  <div class="overlay"></div>
+   <div class="overlay" id="overlay"></div>
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact" class="contact-nav">Contact</a>
+  </nav>
+  
+ 
+
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-box">
@@ -56,12 +65,17 @@
 
   <!-- ABOUT -->
   <section id="about" class="about">
-    <div class="about-box">
-     
-<div class="about-img reveal-about">
-        <img src="photo/sam2.png" alt="About Profile">
+     <h2 class="reveal-right">About Me</h2> 
+    <div class="about-box">   
+      
+  <div class="about-tex"> 
+           
+        <p class="about-text reveal">
+          I am a website developer passionate about bringing ideas to life through clean, modern, and engaging digital
+          experiences. I enjoy creating websites that are simple, easy to use, and impactful for users.
+        </p>
 
-        <div class="socials about-socials">
+         <div class="socials about-socials">
 
           <a href="https://github.com/samira-sites/" target="_blank" class="icon-btn reveal-about" aria-label="GitHub">
             <svg viewBox="0 0 24 24">
@@ -86,14 +100,15 @@
   
         </div>  
       </div>
-      
-        <div class="about-tex"> 
-            <h2 class="reveal-right">About Me</h2> 
-        <p class="about-text reveal">
-          I am a website developer passionate about bringing ideas to life through clean, modern, and engaging digital
-          experiences. I enjoy creating websites that are simple, easy to use, and impactful for users.
-        </p>
+
+
+<div class="about-img reveal-about">
+        <img src="photo/sam2.png" alt="About Profile">
+
+       
       </div>
+      
+      
     </div>
 
     <div class="about-grid">
