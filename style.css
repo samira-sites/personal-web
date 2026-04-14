@@ -244,11 +244,12 @@ h1 span {
   padding: clamp(4px, 1vw, 6px) clamp(12px, 2vw, 16px);
   font-size: clamp(12px, 1.5vw, 14px);
 }
-/* Prevent image misalignment */
+
 .hero-img {
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
 /* HERO IMAGE */
 .hero-img img {
@@ -318,9 +319,6 @@ h3 {
 .hero p{
    margin: 0 1rem;
   
-}
-.typing-text{
-  margin-top: 1rem;
 }
 
 /* -----------------------ABOUT-------------- */
