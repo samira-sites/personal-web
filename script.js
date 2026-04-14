@@ -1,139 +1,78 @@
-// Close mobile menu when clicking a nav link (basic close)
-document.querySelectorAll(".nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("active"); // hide nav menu
-  });
-});
-
-
-// OPEN MODAL
-function openModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) modal.style.display = "flex"; // show modal
-}
-
-// CLOSE MODAL
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) modal.style.display = "none"; // hide modal
-}
-
-
-// CLOSE MODAL WHEN CLICKING OUTSIDE
-window.addEventListener("click", (e) => {
-  document.querySelectorAll(".modal").forEach(modal => {
-    if (e.target === modal) modal.style.display = "none"; // click outside = close
-  });
-});
-
-
-// NAV + BURGER + OVERLAY ELEMENTS
+// =========================
+// SELECT ELEMENTS FIRST (IMPORTANT)
+// =========================
 const burger = document.getElementById("burger");
 const nav = document.getElementById("navMenu");
 const overlay = document.querySelector(".overlay");
 
-
-// TOGGLE MENU + OVERLAY + BURGER ANIMATION
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active"); // animate burger → X
-  nav.classList.toggle("active");    // show/hide mobile menu
-  overlay.classList.toggle("active"); // show/hide blur overlay
-});
-
-
-// CLOSE MENU WHEN CLICKING OVERLAY (IMPORTANT UX)
-overlay.addEventListener("click", () => {
-  burger.classList.remove("active"); // reset burger
-  nav.classList.remove("active");    // hide menu
-  overlay.classList.remove("active"); // remove blur
-});
-
-
-// CLOSE MENU + REMOVE OVERLAY WHEN CLICKING NAV LINK (VERY IMPORTANT FIX)
-document.querySelectorAll(".nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("active");     // hide menu
-    burger.classList.remove("active");  // reset burger icon
-    overlay.classList.remove("active"); // remove blur overlay ✅
-  });
-});
-
-
-// SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
-const elements = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active"); // animate element when visible
-    }
-  });
-}, {
-  threshold: 0.15 // trigger when 15% visible
-});
-
-// APPLY REVEAL TO ALL ELEMENTS
-elements.forEach(el => observer.observe(el));
-
-
-// ajax
 const form = document.getElementById("contactForm");
 const msg = document.getElementById("responseMsg");
 
-// ---------- FORM SUBMIT EVENT LISTENER ----------
-form.addEventListener("submit", async function(e) {
-  e.preventDefault(); // prevent default page reload (AJAX behavior)
 
-  // Collect form data to send to server
-  const formData = new FormData(this);
+// =========================
+// BURGER MENU
+// =========================
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  nav.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
 
-  // ---------- SHOW "SENDING..." MESSAGE ----------
-  msg.innerText = "Sending...";
-  msg.style.color = "white";
-  msg.classList.add("show"); // add slide-in animation
+// CLOSE ON OVERLAY CLICK
+overlay.addEventListener("click", () => {
+  burger.classList.remove("active");
+  nav.classList.remove("active");
+  overlay.classList.remove("active");
+});
 
-  try {
-    // ---------- AJAX REQUEST USING FETCH ----------
-    // Sends form data asynchronously to the PHP script
-    const response = await fetch("contact.php", {
-      method: "POST",
-      body: formData
-    });
-
-    // Get server response as text
-    const data = await response.text();
-
-    // ---------- DISPLAY SERVER RESPONSE ----------
-    msg.innerText = data; // show message inside the form
-    // Green if success, red if error
-    msg.style.color = data.includes("successfully") ? "orange" : "red";
-    msg.classList.add("show"); // slide-in effect
-
-    // Clear form if submission successful
-    if (data.includes("successfully")) form.reset();
-
-    // ---------- AUTO-HIDE MESSAGE AFTER TIMEOUT ----------
-    setTimeout(() => {
-      msg.classList.remove("show"); // hide slide animation
-      msg.innerText = "";           // clear text
-    }, 3000); // 3000ms = 3 seconds
-
-  } catch (err) {
-    // ---------- HANDLE NETWORK/SERVER ERROR ----------
-    msg.innerText = "Something went wrong!";
-    msg.style.color = "red";
-    msg.classList.add("show");
-
-    // Auto-hide error message after 3 seconds
-    setTimeout(() => {
-      msg.classList.remove("show");
-      msg.innerText = "";
-    }, 3000);
-  }
+// CLOSE WHEN CLICKING NAV LINK
+document.querySelectorAll(".nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+    overlay.classList.remove("active");
+  });
 });
 
 
-/*============ animation================*/
+// =========================
+// MODAL
+// =========================
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) modal.style.display = "flex";
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) modal.style.display = "none";
+}
+
+// CLOSE MODAL WHEN CLICKING OUTSIDE
+window.addEventListener("click", (e) => {
+  document.querySelectorAll(".modal").forEach(modal => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+});
+
+
+// =========================
+// SCROLL REVEAL (INTERSECTION OBSERVER)
+// =========================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+
+// =========================
+// EXTRA SCROLL ANIMATIONS
+// =========================
 function revealOnScroll() {
   const elements = document.querySelectorAll(
     ".reveal-bounce, .reveal-about, .reveal-left, .reveal-right"
@@ -151,3 +90,47 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+
+// =========================
+// AJAX FORM (SAFE FIX)
+// =========================
+if (form) {
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    msg.innerText = "Sending...";
+    msg.style.color = "white";
+    msg.classList.add("show");
+
+    try {
+      const response = await fetch("contact.php", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.text();
+
+      msg.innerText = data;
+      msg.style.color = data.includes("successfully") ? "orange" : "red";
+
+      if (data.includes("successfully")) form.reset();
+
+      setTimeout(() => {
+        msg.classList.remove("show");
+        msg.innerText = "";
+      }, 3000);
+
+    } catch (err) {
+      msg.innerText = "Something went wrong!";
+      msg.style.color = "red";
+
+      setTimeout(() => {
+        msg.classList.remove("show");
+        msg.innerText = "";
+      }, 3000);
+    }
+  });
+}

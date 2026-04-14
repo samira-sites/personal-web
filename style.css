@@ -19,7 +19,7 @@
   font-family: Arial, sans-serif;
 }
 html {
-  scroll-padding-top: 100px;
+  scroll-padding-top: 20px; 
 }
 
 body {
@@ -27,7 +27,7 @@ body {
   color: var(--text);
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
-  padding-top: 100px;
+  padding-top: 0px;
 }
 
 /* ================= NAVBAR ================= */
