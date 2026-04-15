@@ -1,3 +1,5 @@
+console.log("JS FILE LOADED");
+
 const burger = document.getElementById("burger");
 const mobileNav = document.getElementById("mobileNav");
 const overlay = document.getElementById("overlay");
@@ -74,12 +76,17 @@ window.addEventListener("load", revealOnScroll);
 // =========================
 // AJAX FORM (SAFE FIX)
 // =========================
+const form = document.getElementById("contactForm");
+const msg = document.getElementById("responseMsg");
+
 if (form) {
-  form.addEventListener("submit", async function(e) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    console.log("SUBMIT FIRED");
 
-    const formData = new FormData(this);
+    const formData = new FormData(form);
 
+    // Show loading state
     msg.innerText = "Sending...";
     msg.style.color = "white";
     msg.classList.add("show");
@@ -90,26 +97,27 @@ if (form) {
         body: formData
       });
 
+      // IMPORTANT: handle server errors
+      if (!response.ok) throw new Error("Server error");
+
       const data = await response.text();
 
+      const isSuccess = data.toLowerCase().includes("success");
+
       msg.innerText = data;
-      msg.style.color = data.includes("successfully") ? "orange" : "red";
+      msg.style.color = isSuccess ? "orange" : "red";
 
-      if (data.includes("successfully")) form.reset();
-
-      setTimeout(() => {
-        msg.classList.remove("show");
-        msg.innerText = "";
-      }, 3000);
+      if (isSuccess) form.reset();
 
     } catch (err) {
       msg.innerText = "Something went wrong!";
       msg.style.color = "red";
-
-      setTimeout(() => {
-        msg.classList.remove("show");
-        msg.innerText = "";
-      }, 3000);
     }
+
+    // auto hide message
+    setTimeout(() => {
+      msg.classList.remove("show");
+      msg.innerText = "";
+    }, 3000);
   });
 }
