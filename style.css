@@ -992,42 +992,6 @@ h3 {
     gap: 12px;
   }
 }
-/* ================= ANIMATIONS BOUNCE ================= */
-.reveal-bounce {
-  opacity: 0;
-  transform: translateY(-150px) scale(0.9);
-  filter: blur(8px);
-  will-change: transform, opacity, filter;
-}
-
-.reveal-bounce.active {
-  animation: dropBounce 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-@keyframes dropBounce {
-  0% {
-    opacity: 0;
-    transform: translateY(-150px) scale(0.9);
-    filter: blur(1px);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translateY(20px) scale(1.05); /* hit ground */
-    filter: blur(1px);
-  }
-
-  80% {
-    transform: translateY(-8px) scale(0.98); /* bounce up */
-  }
-
-  100% {
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
 /* ================= ANIMATIONS ================= */
 .reveal {
   opacity: 0;
@@ -1038,21 +1002,6 @@ h3 {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-/*=======slide amimation======*/
-.reveal-about {
-  opacity: 0;
-  transform: translateX(50px);
-  filter: blur(6px);
-  transition: all 0.9s ease;
-  will-change: transform, opacity, filter;
-}
-
-.reveal-about.active {
-  opacity: 1;
-  transform: translateX(0);
-  filter: blur(0);
 }
 
 .reveal-left,

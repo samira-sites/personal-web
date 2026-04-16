@@ -42,14 +42,14 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-box">
-      <div class="hero-img reveal-bounce">
+      <div class="hero-img reveal-left">
         <img src="photo/profile.webp" alt="Sam Profile">
       </div>
 
       <div class="hero-text reveal">
         <p class="badge reveal" style="margin: 1rem 0;">Website Developer</p>
 
-        <h1 class="reveal-about">Hi, I'm <span class="typing-text reveal">Sam</span></h1>
+        <h1 class="reveal-right">Hi, I'm <span class="typing-text reveal">Sam</span></h1>
 
         <p class="subtitle reveal">
           I build clean, responsive websites focused on simplicity, clarity, and great user experience
@@ -83,7 +83,7 @@
             </svg>
           </a>
 
-          <a href="https://www.linkedin.com/in/samira-omar/" target="_blank" class="icon-btn reveal-bounce"
+          <a href="https://www.linkedin.com/in/samira-omar/" target="_blank" class="icon-btn reveal-left"
             aria-label="LinkedIn">
             <svg viewBox="0 0 24 24">
               <path
@@ -91,7 +91,7 @@
             </svg>
           </a>
 
-          <a href="mailto:hello@samiraomar.com" class="icon-btn reveal-bounce" aria-label="Email">
+          <a href="mailto:hello@samiraomar.com" class="icon-btn reveal-left" aria-label="Email">
             <svg viewBox="0 0 24 24">
               <path
                 d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z" />
@@ -102,7 +102,7 @@
       </div>
 
 
-      <div class="about-img reveal-about">
+      <div class="about-img reveal-right">
         <img src="photo/sam2.png" alt="About Profile">
 
 
@@ -231,7 +231,7 @@
             <i data-lucide="download"></i> Download CV
           </a>
 
-          <a href="https://wa.me/96567077369" target="_blank" class="whatsapp-right reveal-bounce"
+          <a href="https://wa.me/96567077369" target="_blank" class="whatsapp-right reveal-left"
             aria-label="Chat on WhatsApp">
             <img src="photo/whatsapp2.svg" alt="WhatsApp">
           </a>

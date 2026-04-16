@@ -73,50 +73,58 @@ window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
 
-// =========================
-// AJAX FORM (SAFE FIX)
-// =========================
+// ---------- GET FORM AND MESSAGE ELEMENT ----------
 const form = document.getElementById("contactForm");
 const msg = document.getElementById("responseMsg");
 
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+// ---------- FORM SUBMIT EVENT LISTENER ----------
+form.addEventListener("submit", async function(e) {
+  e.preventDefault(); // prevent default page reload (AJAX behavior)
 
-    const formData = new FormData(form);
+  // Collect form data to send to server
+  const formData = new FormData(this);
 
-    // Show loading state
-    msg.innerText = "Sending...";
-    msg.style.color = "white";
+  // ---------- SHOW "SENDING..." MESSAGE ----------
+  msg.innerText = "Sending...";
+  msg.style.color = "blue";
+  msg.classList.add("show"); // add slide-in animation
+
+  try {
+    // ---------- AJAX REQUEST USING FETCH ----------
+    // Sends form data asynchronously to the PHP script
+    const response = await fetch("contact.php", {
+      method: "POST",
+      body: formData
+    });
+
+    // Get server response as text
+    const data = await response.text();
+
+    // ---------- DISPLAY SERVER RESPONSE ----------
+    msg.innerText = data; // show message inside the form
+    // Green if success, red if error
+    msg.style.color = data.includes("successfully") ? "green" : "red";
+    msg.classList.add("show"); // slide-in effect
+
+    // Clear form if submission successful
+    if (data.includes("successfully")) form.reset();
+
+    // ---------- AUTO-HIDE MESSAGE AFTER TIMEOUT ----------
+    setTimeout(() => {
+      msg.classList.remove("show"); // hide slide animation
+      msg.innerText = "";           // clear text
+    }, 3000); // 3000ms = 3 seconds
+
+  } catch (err) {
+    // ---------- HANDLE NETWORK/SERVER ERROR ----------
+    msg.innerText = "Something went wrong!";
+    msg.style.color = "red";
     msg.classList.add("show");
 
-    try {
-      const response = await fetch("./contact.php", {
-        method: "POST",
-        body: formData
-      });
-
-      // IMPORTANT: handle server errors
-      if (!response.ok) throw new Error("Server error");
-
-      const data = await response.text();
-
-      const isSuccess = data.toLowerCase().includes("success");
-
-      msg.innerText = data;
-      msg.style.color = isSuccess ? "orange" : "red";
-
-      if (isSuccess) form.reset();
-
-    } catch (err) {
-      msg.innerText = "Something went wrong!";
-      msg.style.color = "red";
-    }
-
-    // auto hide message
+    // Auto-hide error message after 3 seconds
     setTimeout(() => {
       msg.classList.remove("show");
       msg.innerText = "";
     }, 3000);
-  });
-}
+  }
+});
