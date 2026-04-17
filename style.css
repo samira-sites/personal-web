@@ -21,7 +21,6 @@
 html {
   scroll-padding-top: 40px;
 }
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -51,13 +50,14 @@ body {
   width: 100%;
   max-width: 1200px;
   height: auto;
-  background: var(--text);
+  background: #000;
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.158);
   padding: 1rem;
   border-radius: var(--radius);
-  margin: 0 1rem;
+  margin: 0 2rem;
 }
 .logo {
-  color: var(--bg);
+  color: var(--text);
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
@@ -80,14 +80,14 @@ body {
 }
 
 .nav a {
-  color: var(--bg);
+  color: var(--text);
   text-decoration: none;
   font-size: 14px;
   transition: 0.3s;
 }
 
-.nav a:hover {
-  color: var(--primary);
+.nav a:hover, .contact-nav:hover {
+  color: var(--primary)!important;
 }
 
 /* CONTACT BUTTON */
@@ -95,7 +95,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--primary);
+  background: var(--text);
   color: #000 !important;
   padding: 0.5rem 1.2rem;
   font-weight: 600;
@@ -124,7 +124,7 @@ body {
 .burger span {
   width: 25px;
   height: 2px;
-  background: var(--bg);
+  background: var(--text);
   transition: 0.3s ease;
 }
 
@@ -163,7 +163,7 @@ body {
   overflow: hidden;
   opacity: 0;
   gap: 20px;
-  transition: height 0.4s ease, opacity 0.3s ease;
+  transition: height 1s ease, opacity 0.3s ease;
 }
 
 .header-container.active .mobile-nav {
@@ -173,7 +173,7 @@ body {
 
 /* LINKS */
 .mobile-nav a {
-  color: var(--bg);
+  color: var(--text);
   font-size: 1rem;
   text-decoration: none;
   transition: 0.3s;
@@ -270,9 +270,6 @@ h1 span {
 /* HERO IMAGE */
 .hero-img img {
   margin: 1rem;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  box-shadow: 0 0 40px rgba(254, 156, 10, 0.25);
 }
 
 /* ================= BUTTONS ================= */

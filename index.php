@@ -48,7 +48,7 @@
   <section class="hero" id="home">
     <div class="hero-box">
       <div class="hero-img reveal-left">
-        <img src="photo/hero.webp" alt="Sam Profile" width="200" height="200" loading="eager" fetchpriority="high">
+        <img src="photo/hero image.jpg" alt="Sam Profile" width="250" height="250" loading="eager" fetchpriority="high">
       </div>
 
       <div class="hero-text reveal">
