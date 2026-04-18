@@ -136,7 +136,7 @@
     <h2 class="reveal-right">About SAM</h2>
     <div class="about-box">
 
-      <div class="about-tex">
+      <div class="about-text-box">
         <p class="about-text reveal">
           I build modern, responsive websites that turn ideas into real digital experiences. I care about clean design, usability, and performance — making sure every website feels simple, fast, and effective for users.
         </p>

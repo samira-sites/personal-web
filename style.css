@@ -395,6 +395,12 @@ h3 {
   max-width: 300px;
   border-radius: var(--radius);
 }
+.about-text-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .about-text {
   color: var(--muted);
   max-width: 750px;
