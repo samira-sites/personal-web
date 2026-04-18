@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+
+  <!-- Basic Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAM</title>
-  <link rel="stylesheet" href="style.css">
 
+  <title>PORTFOLIO</title>
+  <meta name="description"
+    content="Turn your idea into a live website">
+
+  <!-- SEO -->
+  <meta name="author" content="Samira Omar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://portfolio.samiraomar.com">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Samira Omar",
+ "url": "https://portfolio.samiraomar.com/",
+ "jobTitle": "Website Developer",
+ "image": "https://samiraomar.com/photo/me.webp",
+ "logo": "https://samiraomar.com/photo/navlogo.webp",
+ "sameAs": [
+   "https://www.linkedin.com/in/samira-omar/"
+ ]
+}
+</script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Modern Websites">
+  <meta property="og:description"
+    content="Check out my portfolio">
+  <meta property="og:site_name" content="Samira Omar">
+  <meta property="og:url" content="https://portfolio.samiraomar.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <meta property="og:image" content="https://portfolio.samiraomar.com/photo/hero image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Preview of Samira Omar's modern website developer portfolio homepage">
+
+  <meta property="fb:app_id" content="your_app_id">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@yourusername">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#ff7a00">
+
+  <!-- Icons / Favicons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon/192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/180.png">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="photo/hero-profile.webp">
 </head>
 
 <body>
@@ -47,7 +112,7 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-box">
-      <div class="hero-img reveal-left">
+      <div class="hero-img reveal">
         <img src="photo/hero image.jpg" alt="Sam Profile" width="250" height="250" loading="eager" fetchpriority="high">
       </div>
 
@@ -57,7 +122,7 @@
         <h1 class="reveal-right">Hi, I'm <span class="typing-text reveal">Sam</span></h1>
 
         <p class="subtitle reveal">
-          I build clean, responsive websites focused on simplicity, clarity, and great user experience
+          Crafting modern, responsive websites with a focus on simplicity, clarity, and experience.
         </p>
 
         <div class="buttons">
@@ -75,8 +140,7 @@
 
       <div class="about-tex">
         <p class="about-text reveal">
-          I am a website developer passionate about bringing ideas to life through clean, modern, and engaging digital
-          experiences. I enjoy creating websites that are simple, easy to use, and impactful for users.
+          I build modern, responsive websites that turn ideas into real digital experiences. I care about clean design, usability, and performance — making sure every website feels simple, fast, and effective for users.
         </p>
 
         <div class="socials about-socials">
