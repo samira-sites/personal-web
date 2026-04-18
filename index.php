@@ -341,7 +341,7 @@
 
       <!-- BRAND -->
       <div class="footer-brand">
-        <h3>Samira Omar</h3>
+        <h3 >Samira Omar</h3>
         <p>
           Website Developer focused on creating clean, modern, and user-friendly digital experiences.
         </p>
