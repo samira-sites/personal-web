@@ -39,7 +39,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
 
-  <meta property="og:image" content="https://portfolio.samiraomar.com/photo/hero image.jpg">
+  <meta property="og:image" content="https://portfolio.samiraomar.com/photo/portfolio-preview.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Preview of Samira Omar's modern website developer portfolio homepage">
@@ -138,7 +138,7 @@
 
       <div class="about-text-box">
         <p class="about-text reveal">
-          I build modern, responsive websites that turn ideas into real digital experiences. I care about clean design, usability, and performance — making sure every website feels simple, fast, and effective for users.
+          I build modern websites that work smoothly on any device. I focus on clean design, speed, and making them easy to use—so every website feels simple, fast, and enjoyable.
         </p>
 
         <div class="socials about-socials">
