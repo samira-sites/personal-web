@@ -39,7 +39,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
 
-  <meta property="og:image" content="https://portfolio.samiraomar.com/photo/portfolio-preview.webp">
+  <meta property="og:image" content="https://portfolio.samiraomar.com/photo/preview.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Preview of Samira Omar's modern website developer portfolio homepage">
