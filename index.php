@@ -170,7 +170,7 @@
 
 
       <div class="about-img reveal-right">
-        <img src="photo/about-image.webp" alt="About Profile">
+        <img src="photo/sam.webp" alt="About Profile">
 
 
       </div>
