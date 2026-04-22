@@ -136,7 +136,7 @@
   <section class="hero" id="home">
     <div class="hero-box">
       <div class="hero-img reveal-left">
-        <img src="photo/hero-image.webp" alt="Sam Profile" loading="eager" fetchpriority="high">
+        <img src="photo/hero-profile.webp" alt="Sam Profile" loading="eager" fetchpriority="high">
       </div>
 
       <div class="hero-text reveal">
