@@ -446,10 +446,6 @@ h1 span {
   filter: drop-shadow(0 10px 20px rgba(254, 156, 10, 0.2));
 }
 
-.hero-img img:hover {
-  transform: translateY(-5px);
-}
-
 /* ================= BUTTONS ================= */
 .btn,
 .btn-outline {
