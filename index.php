@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<script>
-  (function () {
-    if (localStorage.getItem("theme") === "light") {
-      document.documentElement.classList.add("light");
-    }
-  })();
-</script>
-<!-- Basic Meta -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PORTFOLIO</title>
-<meta name="description" content="Turn your idea into a live website">
+  <title>PORTFOLIO</title>
+  <meta name="description" content="Turn your idea into a live website">
+  <meta name="author" content="Samira Omar">
+  <meta name="robots" content="index, follow">
 
-<!-- SEO -->
-<meta name="author" content="Samira Omar">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://portfolio.samiraomar.com">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://portfolio.samiraomar.com">
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Person",
- "name": "Samira Omar",
- "url": "https://portfolio.samiraomar.com/",
- "jobTitle": "Website Developer",
- "image": "https://portfolio.samiraomar.com/photo/me.webp",
- "logo": "https://portfolio.samiraomar.com/icons/sam-180.webp",
- "sameAs": [
-   "https://www.linkedin.com/in/samira-omar/"
- ]
-}
-</script>
+  <!-- Theme -->
+  <meta name="theme-color" content="#fe9c0a">
 
-<!-- Open Graph -->
-<meta property="og:title" content="SAM PORTFOLIO">
-<meta property="og:description"
-  content="Building modern, responsive websites with clean design and great user experience.">
-<meta property="og:site_name" content="Samira Omar">
-<meta property="og:url" content="https://portfolio.samiraomar.com">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
+  <!-- Open Graph -->
+  <meta property="og:title" content="SAM PORTFOLIO">
+  <meta property="og:description" content="Building modern, responsive websites with clean design and great user experience.">
+  <meta property="og:site_name" content="Samira Omar">
+  <meta property="og:url" content="https://portfolio.samiraomar.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://portfolio.samiraomar.com/photo/portfolio-preview.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Preview of Samira Omar portfolio homepage">
 
-<meta property="og:image" content="https://portfolio.samiraomar.com/photo/portfolio-preview.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Preview of Samira Omar's modern website developer portfolio homepage">
+  <!-- Structured Data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Samira Omar",
+    "url": "https://portfolio.samiraomar.com/",
+    "jobTitle": "Website Developer",
+    "image": "https://portfolio.samiraomar.com/photo/me.webp",
+    "logo": "https://portfolio.samiraomar.com/icons/sam-180.webp",
+    "sameAs": [
+      "https://www.linkedin.com/in/samira-omar/"
+    ]
+  }
+  </script>
 
+  <!-- Icons / Favicons -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/sam-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/sam-180.png">
 
-<!-- Theme -->
-<meta name="theme-color" content="#fe9c0a">
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-<!-- Icons / Favicons -->
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/sam-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/sam-180.png">
+  <!-- Performance (Preload) -->
+  <link rel="preload" as="image" href="photo/hero-profile.webp">
 
-<!-- PWA -->
-<link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-<link rel="preload" as="image" href="photo/hero-profile.webp">
+  <!-- Theme Script (run early) -->
+  <script>
+    (function () {
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.classList.add("light");
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -213,13 +215,19 @@
 
       </div>
       <div class="card reveal">
-        <h3>My Journey</h3>
-        <ul>
-          <li>💻 Built real-world web projects <span class="year-badge">2025–Present</span></li>
-          <li>🎓 Level 4 Diploma in Information Technology <span class="year-badge">2024–2026</span></li>
-          <li>🎓 Certificate in Computer Secretarial <span class="year-badge">2023</span></li>
-          <li>👩‍💼 Domestic Helper in Kuwait <span class="year-badge">2017–2026</span></li>
-        </ul>
+      <h2>My Journey</h2>
+
+<ul>
+  <li>💻 Built real-world personal web projects <span class="year-badge">2026–Present</span></li>
+
+  <li>🎓 Level 4 Diploma in Information Technology <span class="year-badge">2026</span></li>
+
+  <li>💻 Wrote my first "Hello World" program <span class="year-badge">2024</span></li>
+
+  <li>🎓 Certificate in Computer Secretarial <span class="year-badge">2023</span></li>
+
+  <li>👩‍💼 Domestic Helper in Kuwait <span class="year-badge">2017</span></li>
+</ul>
       </div>
 
     </div>
