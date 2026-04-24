@@ -19,7 +19,8 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="SAM PORTFOLIO">
-  <meta property="og:description" content="Building modern, responsive websites with clean design and great user experience.">
+  <meta property="og:description"
+    content="Building modern, responsive websites with clean design and great user experience.">
   <meta property="og:site_name" content="Samira Omar">
   <meta property="og:url" content="https://portfolio.samiraomar.com">
   <meta property="og:type" content="website">
@@ -215,19 +216,19 @@
 
       </div>
       <div class="card reveal">
-      <h2>My Journey</h2>
+        <h3>My Journey</h3>
 
-<ul>
-  <li>💻 Built real-world personal web projects <span class="year-badge">2026–Present</span></li>
+        <ul>
+          <li>💻 Built real-world personal web projects <span class="year-badge">2026–Present</span></li>
 
-  <li>🎓 Level 4 Diploma in Information Technology <span class="year-badge">2026</span></li>
+          <li>🎓 Level 4 Diploma in Information Technology <span class="year-badge">2026</span></li>
 
-  <li>💻 Wrote my first "Hello World" program <span class="year-badge">2024</span></li>
+          <li>💻 Wrote my first "Hello World" program <span class="year-badge">2024</span></li>
 
-  <li>🎓 Certificate in Computer Secretarial <span class="year-badge">2023</span></li>
+          <li>🎓 Certificate in Computer Secretarial <span class="year-badge">2023</span></li>
 
-  <li>👩‍💼 Domestic Helper in Kuwait <span class="year-badge">2017</span></li>
-</ul>
+          <li>👩‍💼 Domestic Helper in Kuwait <span class="year-badge">2017</span></li>
+        </ul>
       </div>
 
     </div>
